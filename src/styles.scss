@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+:root {
+  --color-snow: #ffffff;
+  --color-grass: #3dd28d;
+  --color-salmon: #f32c52;
+  --borderRadius: 4px;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.input {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 0.7rem;
+  border-radius: 0.2rem;
+  background-color: #fff;
+  width: 85%;
+  display: block;
+  border: none;
+  border-bottom: 0.1rem solid transparent;
+  transition: all 0.3s;
+}
+.button {
+  display: flex;
+  overflow: hidden;
+  padding: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+  color: #fff;
+  border: 0;
+  border-radius: var(--borderRadius);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 5px 10px var(--color-smoke);
+  width: 15%;
+
+  &:hover {
+    transition: all 150ms linear;
+
+    opacity: 0.85;
+  }
+
+  &:active {
+    transition: all 150ms linear;
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+  }
+}
+.button.-salmon {
+  color: var(--color-snow);
+  background: var(--color-salmon);
+}
+.button.-green {
+  background: var(--color-grass);
+  color: var(--color-snow);
+}
+.error.-salmon {
+  color: var(--color-salmon);
+}

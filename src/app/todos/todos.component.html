@@ -1,0 +1,45 @@
+<section class="heading-section">
+  <h1 class="title">Todo List</h1>
+</section>
+
+<div class="container add-todo-box-container">
+  <div class="add-todo-box">
+    <form [formGroup]="todoFormGroup" (ngSubmit)="onFormSubmit()" class="field">
+      <app-todo-form formControlName="todoItem"></app-todo-form>
+      <button type="submit" class="button -salmon center">
+        <i class="material-icons">add</i>
+        Add
+      </button>
+      <div style="padding-left: 36px" class="error -salmon">
+        <p
+          class="help is-danger"
+          *ngIf="
+            todoItem?.touched && todoItem?.errors?.todoItem?.valid?.required
+          "
+        >
+          Please enter the text of your todo
+        </p>
+        <p
+          class="help is-danger"
+          *ngIf="todoItem?.errors?.todoItem?.valid?.minLength"
+        >
+          Todo text must be at least 2 characters
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="todos-list">
+      <app-todo-item
+        *ngFor="let todo of completedTasks"
+        [todo]="todo"
+        (todoClicked)="toggleCompleted(todo)"
+        (editClicked)="editTodo(todo)"
+        (deleteClicked)="deleteTodo(todo)"
+      ></app-todo-item>
+    </div>
+  </div>
+</section>

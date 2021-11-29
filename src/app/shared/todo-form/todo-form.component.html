@@ -1,0 +1,14 @@
+<form [formGroup]="todoFormGroup">
+  <div class="field is-grouped" style="margin: 0">
+    <input
+      formControlName="todoItem"
+      minlength="2"
+      name="text"
+      class="input"
+      type="text"
+      placeholder="Type todo text here ..."
+      autocomplete="off"
+      [ngClass]="{ 'todo?.name': 'input' }"
+    />
+  </div>
+</form>
